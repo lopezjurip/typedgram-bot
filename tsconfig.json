@@ -14,7 +14,8 @@
     },
     "filesGlob": [
         "src/**/*.ts",
-        "!./node_modules/**/*"
+        "!./node_modules/**/*",
+        "!./example/typescript.ts"
     ],
     "files": [
         "src/lib/telegram-interfaces.ts",
