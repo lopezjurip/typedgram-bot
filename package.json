@@ -1,0 +1,41 @@
+{
+  "name": "typedgram-bot",
+  "version": "0.1.0",
+  "description": "Telegram Bot Api wrapper written in Typescript",
+  "author": "Patricio Lópex <lopezjuripatricio@gmail.com> (https://lopezjuri.com/)",
+  "homepage": "https://github.com/mrpatiwi/typedgram-bot",
+  "main": "index.js",
+  "keywords": [
+    "telegram",
+    "bot",
+    "typescript",
+    "typed"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mrpatiwi/typedgram-bot/blob/master/LICENSE-MIT"
+    }
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "test": "gulp build; mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mrpatiwi/typedgram-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrpatiwi/typedgram-bot/issues"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "node-telegram-bot-api": "^0.12.1"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.8.0",
+    "mocha": "~2.2.5"
+  }
+}
