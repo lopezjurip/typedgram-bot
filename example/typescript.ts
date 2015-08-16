@@ -1,4 +1,6 @@
-import {TelegramTypedBot as Bot, BotAction, User, Message, IServerOptions, TelegramEvent} from './../index'
+/// <reference path="../definitions/scr/typedgram-bot.d.ts"/>
+
+import {TelegramTypedBot as Bot, IServerOptions, TelegramEvent} from './../index'
 
 const PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT      // do not choose 443
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN                       // from @botfather
