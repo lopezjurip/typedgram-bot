@@ -1,6 +1,6 @@
 {
     "name": "typedgram-bot",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Telegram Bot Api wrapper written in Typescript",
     "author": "Patricio Lópex <lopezjuripatricio@gmail.com> (https://lopezjuri.com/)",
     "homepage": "https://github.com/mrpatiwi/typedgram-bot",
@@ -20,7 +20,11 @@
         "test": "gulp build; mocha"
     },
     "typescript": {
-        "definition": "definitions/src/typedgram-bot.d.ts"
+        "definitions": [
+          "definitions/src/telegram-interfaces.d.ts",
+          "definitions/src/typedgram-bot.d.ts",
+          "src/telegram.d.ts"
+        ]
     },
     "repository": {
         "type": "git",

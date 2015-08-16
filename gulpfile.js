@@ -8,8 +8,8 @@ gulp.task('script', function() {
   var tsResult = tsProject.src().pipe(ts(tsProject));
 
   return merge([
-        tsResult.dts.pipe(gulp.dest('definitions')),
-        tsResult.js.pipe(gulp.dest('lib')),
+        tsResult.dts.pipe(gulp.dest('./definitions')),
+        tsResult.js.pipe(gulp.dest('./lib')),
     ]);
 });
 

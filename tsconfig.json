@@ -10,11 +10,13 @@
         "preserveConstEnums": true,
         "sourceMap": false,
         "declaration": true,
-        "outDir": "./lib/src"
+        "rootDir": "./src",
+        "outDir": "./lib"
     },
     "filesGlob": [
         "src/**/*.ts",
         "test/**/*.ts",
+        "typings/**/*.ts",
         "!./node_modules/**/*",
         "!./example/typescript.ts"
     ],
@@ -22,7 +24,12 @@
         "src/telegram-interfaces.ts",
         "src/telegram.d.ts",
         "src/typedgram-bot.ts",
-        "test/import.ts"
+        "test/import.ts",
+        "typings/bluebird/bluebird.d.ts",
+        "typings/chai/chai.d.ts",
+        "typings/mocha/mocha.d.ts",
+        "typings/node/node.d.ts",
+        "typings/tsd.d.ts"
     ],
     "formatCodeOptions": {
         "indentSize": 4,

@@ -1,6 +1,6 @@
-/// <reference path="../../../typings/node/node.d.ts" />
-/// <reference path="../../../typings/bluebird/bluebird.d.ts" />
-/// <reference path="../../../src/telegram.d.ts" />
+/// <reference path="../../typings/node/node.d.ts" />
+/// <reference path="../../typings/bluebird/bluebird.d.ts" />
+/// <reference path="../../src/telegram.d.ts" />
 /// <reference path="telegram-interfaces.d.ts" />
 import TelegramBot = require("node-telegram-bot-api");
 import * as t from './telegram-interfaces';
