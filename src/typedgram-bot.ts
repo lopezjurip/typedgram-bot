@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts"/>
+/// <reference path="../typings/node-telegram-bot-api/node-telegram-bot-api.d.ts"/>
 
 import TelegramBot = require("node-telegram-bot-api");
 import {Stream} from "stream";
