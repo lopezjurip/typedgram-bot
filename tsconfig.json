@@ -14,13 +14,15 @@
     },
     "filesGlob": [
         "src/**/*.ts",
+        "test/**/*.ts",
         "!./node_modules/**/*",
         "!./example/typescript.ts"
     ],
     "files": [
         "src/telegram-interfaces.ts",
         "src/telegram.d.ts",
-        "src/typedgram-bot.ts"
+        "src/typedgram-bot.ts",
+        "test/import.ts"
     ],
     "formatCodeOptions": {
         "indentSize": 4,

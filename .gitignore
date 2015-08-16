@@ -1,4 +1,9 @@
 # Node
+
+# Tests should be transpiled locally
+definitions/test
+lib/test
+
 # Logs
 logs
 *.log
