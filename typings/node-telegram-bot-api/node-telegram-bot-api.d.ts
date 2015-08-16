@@ -145,16 +145,18 @@ interface ISendMessageOptions extends IReplyOptions {
 }
 
 interface ISendPhotoOptions extends IReplyOptions {
-    caption: string
+    caption?: string
 }
 
 interface ISendAudioOptions extends IReplyOptions {
-    duration: number
+    duration?: number
+    performer?: string
+    title?: string
 }
 
 interface ISendVideoOptions extends IReplyOptions {
-    caption: string
-    duration: number
+    caption?: string
+    duration?: number
 }
 
 interface IQs {
