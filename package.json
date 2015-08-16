@@ -21,9 +21,7 @@
     },
     "typescript": {
         "definitions": [
-          "definitions/src/telegram-interfaces.d.ts",
-          "definitions/src/typedgram-bot.d.ts",
-          "src/telegram.d.ts"
+          "definitions/src/typedgram-bot.d.ts"
         ]
     },
     "repository": {

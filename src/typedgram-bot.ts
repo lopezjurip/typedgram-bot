@@ -1,14 +1,9 @@
-/// <reference path="../typings/node/node.d.ts"/>
-/// <reference path="../typings/bluebird/bluebird.d.ts"/>
-/// <reference path="./telegram.d.ts"/>
-/// <reference path="./telegram-interfaces.ts"/>
+/// <reference path="../typings/tsd.d.ts"/>
 
 import TelegramBot = require("node-telegram-bot-api");
-import * as t from './telegram-interfaces';
+//import * as t from "node-telegram-bot-api";
 import {Stream} from "stream";
 import {TimeoutError} from "bluebird";
-
-export * from './telegram-interfaces'
 
 export interface IServerOptions {
     host: string
@@ -18,7 +13,7 @@ export interface IServerOptions {
 
 export interface IBotCommandArgs {
     bot: TelegramBot,
-    msg: t.Message,
+    msg: Message,
     arg?: string,
 }
 
@@ -39,7 +34,7 @@ export const TelegramEvent = {
     group_chat_created: 'group_chat_created',
 }
 
-export type BotAction = (bot: TelegramBot, msg: t.Message, arg?: string) => void
+export type BotAction = (bot: TelegramBot, msg: Message, arg?: string) => void
 
 export type idType = number | string
 export type fileType = string | Stream
@@ -49,7 +44,7 @@ export class TelegramTypedBot extends TelegramBot {
     protected events: { [command: string]: BotAction }
     protected waitingResponse: { [messageId: string]: (cmd: IBotCommandArgs) => void }
 
-    public initializationAction: (bot: TelegramBot, me: t.User) => void
+    public initializationAction: (bot: TelegramBot, me: User) => void
     public missingAction: BotAction
     public plainTextAction: BotAction
 
@@ -81,14 +76,14 @@ export class TelegramTypedBot extends TelegramBot {
         this.on(TelegramEvent.delete_chat_photo, msg => this.onMessage(TelegramEvent.delete_chat_photo, msg))
     }
 
-    protected _request(path: string, qsopt?: t.IQs) {
+    protected _request(path: string, qsopt?: IQs) {
         if (qsopt && qsopt.qs && qsopt.qs.reply_markup) {
             qsopt.qs.reply_markup = JSON.stringify(qsopt.qs.reply_markup)
         }
         return super._request(path, qsopt)
     }
 
-    protected sendInteractive(chatId: idType, fromId: idType, promise: Promise<t.Message>): Promise<IBotCommandArgs> {
+    protected sendInteractive(chatId: idType, fromId: idType, promise: Promise<Message>): Promise<IBotCommandArgs> {
         return new Promise<IBotCommandArgs>((resolve, reject) => {
             var ticket = ""
             promise
@@ -105,31 +100,31 @@ export class TelegramTypedBot extends TelegramBot {
         });
     }
 
-    public sendInteractiveMessage(chatId: idType, fromId: idType, text: string, options: t.ISendMessageOptions): Promise<IBotCommandArgs> {
+    public sendInteractiveMessage(chatId: idType, fromId: idType, text: string, options?: ISendMessageOptions): Promise<IBotCommandArgs> {
         return this.sendInteractive(chatId, fromId, this.sendMessage(chatId, text, options))
     }
 
-    public sendInteractivePhoto(chatId: idType, fromId: idType, photo: fileType, options?: t.ISendPhotoOptions): Promise<IBotCommandArgs> {
+    public sendInteractivePhoto(chatId: idType, fromId: idType, photo: fileType, options?: ISendPhotoOptions): Promise<IBotCommandArgs> {
         return this.sendInteractive(chatId, fromId, this.sendPhoto(chatId, photo, options))
     }
 
-    public sendInteractiveAudio(chatId: idType, fromId: idType, audio: fileType, options?: t.ISendAudioOptions): Promise<IBotCommandArgs> {
+    public sendInteractiveAudio(chatId: idType, fromId: idType, audio: fileType, options?: ISendAudioOptions): Promise<IBotCommandArgs> {
         return this.sendInteractive(chatId, fromId, this.sendAudio(chatId, audio, options))
     }
 
-    public sendInteractiveDocument(chatId: idType, fromId: idType, path: fileType, options?: t.IReplyOptions): Promise<IBotCommandArgs> {
+    public sendInteractiveDocument(chatId: idType, fromId: idType, path: fileType, options?: IReplyOptions): Promise<IBotCommandArgs> {
         return this.sendInteractive(chatId, fromId, this.sendDocument(chatId, path, options))
     }
 
-    public sendInteractiveSticker(chatId: idType, fromId: idType, path: fileType, options?: t.IReplyOptions): Promise<IBotCommandArgs> {
+    public sendInteractiveSticker(chatId: idType, fromId: idType, path: fileType, options?: IReplyOptions): Promise<IBotCommandArgs> {
         return this.sendInteractive(chatId, fromId, this.sendSticker(chatId, path, options))
     }
 
-    public sendInteractiveVideo(chatId: idType, fromId: idType, path: fileType, options?: t.ISendVideoOptions): Promise<IBotCommandArgs> {
+    public sendInteractiveVideo(chatId: idType, fromId: idType, path: fileType, options?: ISendVideoOptions): Promise<IBotCommandArgs> {
         return this.sendInteractive(chatId, fromId, this.sendVideo(chatId, path, options))
     }
 
-    public sendInteractiveLocation(chatId: idType, fromId: idType, latitude: number, longitude: number, options?: t.IReplyOptions): Promise<IBotCommandArgs> {
+    public sendInteractiveLocation(chatId: idType, fromId: idType, latitude: number, longitude: number, options?: IReplyOptions): Promise<IBotCommandArgs> {
         return this.sendInteractive(chatId, fromId, this.sendLocation(chatId, latitude, longitude, options))
     }
 
@@ -137,7 +132,7 @@ export class TelegramTypedBot extends TelegramBot {
         return `${chatId},${fromId}`
     }
 
-    protected getTicketFromMessage(msg: t.Message): string {
+    protected getTicketFromMessage(msg: Message): string {
         return this.getTicketFromInfo(msg.chat.id, msg.from.id)
     }
 
@@ -149,7 +144,7 @@ export class TelegramTypedBot extends TelegramBot {
         delete this.waitingResponse[ticket];
     }
 
-    protected onMessage(event: string, msg: t.Message) {
+    protected onMessage(event: string, msg: Message) {
         const ticket = this.getTicketFromMessage(msg)
         const pendingResolve = this.waitingResponse[ticket]
 
@@ -160,12 +155,12 @@ export class TelegramTypedBot extends TelegramBot {
         }
     }
 
-    protected onResponseMessage(msg: t.Message, ticket: string, pendingResolve: (b: IBotCommandArgs) => void) {
+    protected onResponseMessage(msg: Message, ticket: string, pendingResolve: (b: IBotCommandArgs) => void) {
         pendingResolve({ bot: this, msg: msg, arg: msg.text })
         this.removeFromWaiting(ticket)
     }
 
-    protected onNonResponseMessage(event: string, msg: t.Message) {
+    protected onNonResponseMessage(event: string, msg: Message) {
         const action = this.events[event]
         if (action) {
             action(this, msg)
@@ -174,7 +169,7 @@ export class TelegramTypedBot extends TelegramBot {
         }
     }
 
-    protected onText(msg: t.Message) {
+    protected onText(msg: Message) {
         const text = msg.text.trim()
         const isCommand = text.lastIndexOf('/', 0) === 0
         if (isCommand) {
@@ -186,7 +181,7 @@ export class TelegramTypedBot extends TelegramBot {
         }
     }
 
-    protected onCommand(command: string, arg: string, msg: t.Message) {
+    protected onCommand(command: string, arg: string, msg: Message) {
         const action = this.commands[command]
         if (action) {
             action(this, msg, arg)
@@ -195,7 +190,7 @@ export class TelegramTypedBot extends TelegramBot {
         }
     }
 
-    protected onPlainText(text: string, msg: t.Message) {
+    protected onPlainText(text: string, msg: Message) {
         if (this.plainTextAction) {
             this.plainTextAction(this, msg, msg.text)
         }
@@ -265,7 +260,7 @@ export class TelegramTypedBot extends TelegramBot {
         }
     }
 
-    public setInitializationCommand(action: (bot: TelegramBot, me: t.User) => void) {
+    public setInitializationCommand(action: (bot: TelegramBot, me: User) => void) {
         this.initializationAction = action
         console.log('Registered initialization action.')
     }
