@@ -2,17 +2,17 @@
 declare module 'typedgram-bot' {
     import TelegramBot = require("node-telegram-bot-api");
     import { Stream } from "stream";
-    interface IServerOptions {
+    export interface IServerOptions {
         host: string;
         port: number;
         domain: string;
     }
-    interface IBotCommandArgs {
+    export interface IBotCommandArgs {
         bot: TelegramBot;
         msg: Message;
         arg?: string;
     }
-    const TelegramEvent: {
+    export const TelegramEvent: {
         sticker: string;
         photo: string;
         audio: string;
@@ -27,10 +27,10 @@ declare module 'typedgram-bot' {
         delete_chat_photo: string;
         group_chat_created: string;
     };
-    type BotAction = (bot: TelegramBot, msg: Message, arg?: string) => void;
-    type idType = number | string;
-    type fileType = string | Stream;
-    class TelegramTypedBot extends TelegramBot {
+    export type BotAction = (bot: TelegramBot, msg: Message, arg?: string) => void;
+    export type idType = number | string;
+    export type fileType = string | Stream;
+    export class TelegramTypedBot extends TelegramBot {
         protected commands: {
             [command: string]: BotAction;
         };
