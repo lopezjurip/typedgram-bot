@@ -10,7 +10,7 @@
         "preserveConstEnums": true,
         "sourceMap": false,
         "declaration": true,
-        "outDir": "./build/src"
+        "outDir": "./lib/src"
     },
     "filesGlob": [
         "src/**/*.ts",
@@ -18,9 +18,9 @@
         "!./example/typescript.ts"
     ],
     "files": [
-        "src/lib/telegram-interfaces.ts",
-        "src/lib/telegram.d.ts",
-        "src/telegram-typed-bot.ts"
+        "src/telegram-interfaces.ts",
+        "src/telegram.d.ts",
+        "src/typedgram-bot.ts"
     ],
     "formatCodeOptions": {
         "indentSize": 4,

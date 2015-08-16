@@ -1,1 +1,1 @@
-module.exports = require('./build/src/telegram-typed-bot');
+module.exports = require('./lib/src/typedgram-bot');

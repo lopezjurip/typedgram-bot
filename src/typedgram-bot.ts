@@ -1,14 +1,14 @@
 /// <reference path="../typings/node/node.d.ts"/>
 /// <reference path="../typings/bluebird/bluebird.d.ts"/>
-/// <reference path="./lib/telegram.d.ts"/>
-/// <reference path="./lib/telegram-interfaces.ts"/>
+/// <reference path="./telegram.d.ts"/>
+/// <reference path="./telegram-interfaces.ts"/>
 
 import TelegramBot = require("node-telegram-bot-api");
-import * as t from './lib/telegram-interfaces';
+import * as t from './telegram-interfaces';
 import {Stream} from "stream";
 import {TimeoutError} from "bluebird";
 
-export * from './lib/telegram-interfaces'
+export * from './telegram-interfaces'
 
 export interface IServerOptions {
     host: string
