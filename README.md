@@ -17,7 +17,7 @@ If you are using **[tsd](https://github.com/DefinitelyTyped/tsd)**, run `tsd lin
 /// <reference path="../node_modules/typedgram-bot/definitions/src/typedgram-bot.d.ts" />
 ```
 
-## Usage
+## Typescript Usage
 
 This project interacts with Telegram using webhooks, so make sure you have access to your server `ip`, `port` and `host`.
 
@@ -143,4 +143,4 @@ class InteractiveResponses {
 }
 ```
 
-See [examples](examples) or check the [definitions](definitions).
+See [examples](examples) or check the [definitions](definitions). There is a example showing how to use it on a Javascript project.

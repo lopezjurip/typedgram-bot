@@ -21,7 +21,7 @@
     },
     "typescript": {
         "definitions": [
-          "definitions/src/typedgram-bot.d.ts"
+            "definitions/src/typedgram-bot.d.ts"
         ]
     },
     "repository": {
@@ -38,8 +38,10 @@
     "devDependencies": {
         "chai": "^3.2.0",
         "gulp": "^3.9.0",
+        "gulp-typedoc": "^1.2.1",
         "gulp-typescript": "^2.8.0",
         "merge2": "^0.3.6",
-        "mocha": "~2.2.5"
+        "mocha": "~2.2.5",
+        "typedoc": "^0.3.8"
     }
 }
