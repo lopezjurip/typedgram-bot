@@ -134,9 +134,9 @@ class InteractiveResponses {
                     }
                 }
             ).then(response => {
-                // We wait the response that comes as a Promise.
+                // We wait the response: Message that comes as a Promise.
                 // If there is not answer, it will 'reject' the promise with TimeoutError.
-                bot.sendMessage(response.msg.chat.id, response.arg)
+                bot.sendMessage(response.chat.id, response.arg)
             })
         }
     }
