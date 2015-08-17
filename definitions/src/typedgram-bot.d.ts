@@ -7,11 +7,6 @@ declare module 'typedgram-bot' {
         port: number;
         domain: string;
     }
-    export interface IBotCommandArgs {
-        bot: TelegramBot;
-        msg: Message;
-        arg?: string;
-    }
     export const TelegramEvent: {
         sticker: string;
         photo: string;
@@ -31,34 +26,34 @@ declare module 'typedgram-bot' {
     export type idType = number | string;
     export type fileType = string | Stream;
     export class TelegramTypedBot extends TelegramBot {
-        protected commands: {
+        commands: {
             [command: string]: BotAction;
         };
-        protected events: {
+        events: {
             [command: string]: BotAction;
         };
         protected waitingResponse: {
-            [messageId: string]: (cmd: IBotCommandArgs) => void;
+            [ticket: string]: (msg: Message) => void;
         };
         initializationAction: (bot: TelegramBot, me: User) => void;
         missingAction: BotAction;
         plainTextAction: BotAction;
         constructor(token: string, server: IServerOptions);
         protected _request(path: string, qsopt?: IQs): Promise<Message>;
-        protected sendInteractive(chatId: idType, fromId: idType, promise: Promise<Message>): Promise<IBotCommandArgs>;
-        sendInteractiveMessage(chatId: idType, fromId: idType, text: string, options?: ISendMessageOptions): Promise<IBotCommandArgs>;
-        sendInteractivePhoto(chatId: idType, fromId: idType, photo: fileType, options?: ISendPhotoOptions): Promise<IBotCommandArgs>;
-        sendInteractiveAudio(chatId: idType, fromId: idType, audio: fileType, options?: ISendAudioOptions): Promise<IBotCommandArgs>;
-        sendInteractiveDocument(chatId: idType, fromId: idType, path: fileType, options?: IReplyOptions): Promise<IBotCommandArgs>;
-        sendInteractiveSticker(chatId: idType, fromId: idType, path: fileType, options?: IReplyOptions): Promise<IBotCommandArgs>;
-        sendInteractiveVideo(chatId: idType, fromId: idType, path: fileType, options?: ISendVideoOptions): Promise<IBotCommandArgs>;
-        sendInteractiveLocation(chatId: idType, fromId: idType, latitude: number, longitude: number, options?: IReplyOptions): Promise<IBotCommandArgs>;
+        protected sendInteractive(chatId: idType, fromId: idType, promise: Promise<Message>): Promise<Message>;
+        sendInteractiveMessage(chatId: idType, fromId: idType, text: string, options?: ISendMessageOptions): Promise<Message>;
+        sendInteractivePhoto(chatId: idType, fromId: idType, photo: fileType, options?: ISendPhotoOptions): Promise<Message>;
+        sendInteractiveAudio(chatId: idType, fromId: idType, audio: fileType, options?: ISendAudioOptions): Promise<Message>;
+        sendInteractiveDocument(chatId: idType, fromId: idType, path: fileType, options?: IReplyOptions): Promise<Message>;
+        sendInteractiveSticker(chatId: idType, fromId: idType, path: fileType, options?: IReplyOptions): Promise<Message>;
+        sendInteractiveVideo(chatId: idType, fromId: idType, path: fileType, options?: ISendVideoOptions): Promise<Message>;
+        sendInteractiveLocation(chatId: idType, fromId: idType, latitude: number, longitude: number, options?: IReplyOptions): Promise<Message>;
         protected getTicketFromInfo(chatId: idType, fromId: idType): string;
         protected getTicketFromMessage(msg: Message): string;
-        protected addToWaitingResponse(ticket: string, resolve: (b: IBotCommandArgs) => void): void;
+        protected addToWaitingResponse(ticket: string, resolve: (msg: Message) => void): void;
         protected removeFromWaiting(ticket: string): void;
         protected onMessage(event: string, msg: Message): void;
-        protected onResponseMessage(msg: Message, ticket: string, pendingResolve: (b: IBotCommandArgs) => void): void;
+        protected onResponseMessage(msg: Message, ticket: string, pendingResolve: (msg: Message) => void): void;
         protected onNonResponseMessage(event: string, msg: Message): void;
         protected onText(msg: Message): void;
         protected onCommand(command: string, arg: string, msg: Message): void;
@@ -67,11 +62,11 @@ declare module 'typedgram-bot' {
         command(...commands: string[]): (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => TypedPropertyDescriptor<any>;
         setEvent(events: string | string[], action: BotAction): void;
         event(...events: string[]): (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => TypedPropertyDescriptor<any>;
-        setPlainTextCommand(action: BotAction): void;
-        plainTextCommand: (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => TypedPropertyDescriptor<any>;
+        setPlainText(action: BotAction): void;
+        plainText: (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => TypedPropertyDescriptor<any>;
         setMissingCommand(action: BotAction): void;
         missingCommand: (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => TypedPropertyDescriptor<any>;
-        setInitializationCommand(action: (bot: TelegramBot, me: User) => void): void;
+        setInitialization(action: (bot: TelegramBot, me: User) => void): void;
         initialization: (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => TypedPropertyDescriptor<any>;
     }
 }

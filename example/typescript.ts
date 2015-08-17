@@ -48,7 +48,7 @@ class MyActions {
         bot.sendMessage(msg.chat.id, 'Nice pic!')
     }
 
-    @bot.command() // /media
+    @bot.command() // '/media'
     static media(bot: Bot, msg: Message, arg?: string) {
         bot.sendInteractiveMessage(
             msg.chat.id,
@@ -67,23 +67,23 @@ class MyActions {
             }
         ).then(response => {
             const hideKeyboard = {
-                reply_to_message_id: response.msg.message_id,
+                reply_to_message_id: response.message_id,
                 reply_markup: { hide_keyboard: true },
             }
 
-            switch (response.msg.text) {
+            switch (response.text) {
                 case 'Image': {
-                    bot.sendMessage(response.msg.chat.id, 'I got this, what do you have?', hideKeyboard)
+                    bot.sendMessage(response.chat.id, 'I got this, what do you have?', hideKeyboard)
                     .then(function(sent) {
-                        return bot.sendInteractivePhoto(response.msg.chat.id, response.msg.from.id, './example/image.png', hideKeyboard)
+                        return bot.sendInteractivePhoto(response.chat.id, response.from.id, './example/image.png', hideKeyboard)
                     })
                     .then(function(response) {
-                        return bot.sendMessage(response.msg.chat.id, 'Nice!', { reply_to_message_id: response.msg.message_id })
+                        return bot.sendMessage(response.chat.id, 'Nice!', { reply_to_message_id: response.message_id })
                     })
                     break
                 }
                 case 'Document': {
-                    bot.sendDocument(response.msg.chat.id, './example/bot.js', hideKeyboard)
+                    bot.sendDocument(response.chat.id, './example/bot.js', hideKeyboard)
                 }
             }
         })

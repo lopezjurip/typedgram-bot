@@ -76,7 +76,7 @@ class DefaultActions {
 
     @bot.missingCommand
     static missing(bot: Bot, msg: Message, arg?: string) {
-        console.log('recieved:', msg.text)
+        console.log('received:', msg.text)
     }
 }
 ```
@@ -135,7 +135,7 @@ class InteractiveResponses {
                 }
             ).then(response => {
                 // We wait the response that comes as a Promise.
-                // If there is not answer, it will 'refect' the promise with TimeoutError.
+                // If there is not answer, it will 'reject' the promise with TimeoutError.
                 bot.sendMessage(response.msg.chat.id, response.arg)
             })
         }
