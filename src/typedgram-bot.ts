@@ -1,8 +1,10 @@
-/// <reference path="../typings/node-telegram-bot-api/node-telegram-bot-api.d.ts"/>
+/// <reference path="../typings/tsd.d.ts"/>
 
 import TelegramBot = require("node-telegram-bot-api");
 import {Stream} from "stream";
-import {TimeoutError} from "bluebird";
+import Promise = require("bluebird");
+
+const TIMEOUT = 10000
 
 export interface IServerOptions {
     host: string
@@ -27,42 +29,41 @@ export const TelegramEvent = {
     group_chat_created: 'group_chat_created',
 }
 
-export type BotAction = (bot: TelegramBot, msg: Message, arg?: string) => void
-
+export type Action = (msg: Message) => Promise<Message>
 export type idType = number | string
 export type fileType = string | Stream
 
 export class TelegramTypedBot extends TelegramBot {
-    public commands: { [command: string]: BotAction } = {}
-    public events: { [command: string]: BotAction } = {}
+    public commands: { [command: string]: Action } = {}
+    public events: { [command: string]: Action } = {}
     protected waitingResponse: { [ticket: string]: (msg: Message) => void } = {}
 
-    public initializationAction: (bot: TelegramBot, me: User) => void
-    public missingAction: BotAction
-    public plainTextAction: BotAction
+    public initializationAction: (me: User) => void
+    public missingAction: Action
+    public plainTextAction: Action
 
     constructor(token: string, server: IServerOptions) {
         super(token, { webHook: { port: server.port, host: server.host } })
         this.setWebHook(server.domain + ':443/bot' + token)
 
         this.getMe().then(me => {
-            if (this.initializationAction) this.initializationAction(this, me)
+            if (this.initializationAction) this.initializationAction(me)
         })
 
-        this.on('text', msg => this.onMessage('text', msg))
-        this.on(TelegramEvent.audio, msg => this.onMessage(TelegramEvent.audio, msg))
-        this.on(TelegramEvent.document, msg => this.onMessage(TelegramEvent.document, msg))
-        this.on(TelegramEvent.photo, msg => this.onMessage(TelegramEvent.photo, msg))
-        this.on(TelegramEvent.sticker, msg => this.onMessage(TelegramEvent.sticker, msg))
-        this.on(TelegramEvent.video, msg => this.onMessage(TelegramEvent.video, msg))
-        this.on(TelegramEvent.contact, msg => this.onMessage(TelegramEvent.contact, msg))
-        this.on(TelegramEvent.location, msg => this.onMessage(TelegramEvent.location, msg))
-        this.on(TelegramEvent.group_chat_created, msg => this.onMessage(TelegramEvent.group_chat_created, msg))
-        this.on(TelegramEvent.new_chat_participant, msg => this.onMessage(TelegramEvent.new_chat_participant, msg))
-        this.on(TelegramEvent.left_chat_participant, msg => this.onMessage(TelegramEvent.left_chat_participant, msg))
-        this.on(TelegramEvent.new_chat_title, msg => this.onMessage(TelegramEvent.new_chat_title, msg))
-        this.on(TelegramEvent.new_chat_photo, msg => this.onMessage(TelegramEvent.new_chat_photo, msg))
-        this.on(TelegramEvent.delete_chat_photo, msg => this.onMessage(TelegramEvent.delete_chat_photo, msg))
+        super.on('text', msg => this.receivedMessage('text', msg))
+        super.on(TelegramEvent.audio, msg => this.receivedMessage(TelegramEvent.audio, msg))
+        super.on(TelegramEvent.document, msg => this.receivedMessage(TelegramEvent.document, msg))
+        super.on(TelegramEvent.photo, msg => this.receivedMessage(TelegramEvent.photo, msg))
+        super.on(TelegramEvent.sticker, msg => this.receivedMessage(TelegramEvent.sticker, msg))
+        super.on(TelegramEvent.video, msg => this.receivedMessage(TelegramEvent.video, msg))
+        super.on(TelegramEvent.contact, msg => this.receivedMessage(TelegramEvent.contact, msg))
+        super.on(TelegramEvent.location, msg => this.receivedMessage(TelegramEvent.location, msg))
+        super.on(TelegramEvent.group_chat_created, msg => this.receivedMessage(TelegramEvent.group_chat_created, msg))
+        super.on(TelegramEvent.new_chat_participant, msg => this.receivedMessage(TelegramEvent.new_chat_participant, msg))
+        super.on(TelegramEvent.left_chat_participant, msg => this.receivedMessage(TelegramEvent.left_chat_participant, msg))
+        super.on(TelegramEvent.new_chat_title, msg => this.receivedMessage(TelegramEvent.new_chat_title, msg))
+        super.on(TelegramEvent.new_chat_photo, msg => this.receivedMessage(TelegramEvent.new_chat_photo, msg))
+        super.on(TelegramEvent.delete_chat_photo, msg => this.receivedMessage(TelegramEvent.delete_chat_photo, msg))
     }
 
     protected _request(path: string, qsopt?: IQs) {
@@ -72,51 +73,21 @@ export class TelegramTypedBot extends TelegramBot {
         return super._request(path, qsopt)
     }
 
-    protected sendInteractive(chatId: idType, fromId: idType, promise: Promise<Message>): Promise<Message> {
-        return new Promise<Message>((resolve, reject) => {
+    public waitResponse(msg: Message, timeout: number = TIMEOUT): (msg: Message) => Promise<Message> {
+        return (response: Message) => {
             var ticket = ""
-            promise
-            .then(msg => {
-                ticket = this.getTicketFromInfo(chatId, fromId)
-                this.addToWaitingResponse(ticket, resolve)
+            return new Promise<Message>((resolve, reject) => {
+                ticket = this.getTicketFromMessage(msg)
+                this.addToWaiting(ticket, resolve)
             })
             .cancellable()
-            .timeout(10000)
-            .catch(TimeoutError, err => {
+            .timeout(timeout)
+            .catch(Promise.TimeoutError, err => {
                 if (ticket !== "") this.removeFromWaiting(ticket)
+                throw err
+                return err
             })
-            .catch(err => {
-                reject(err)
-            })
-        });
-    }
-
-    public sendInteractiveMessage(chatId: idType, fromId: idType, text: string, options?: ISendMessageOptions): Promise<Message> {
-        return this.sendInteractive(chatId, fromId, this.sendMessage(chatId, text, options))
-    }
-
-    public sendInteractivePhoto(chatId: idType, fromId: idType, photo: fileType, options?: ISendPhotoOptions): Promise<Message> {
-        return this.sendInteractive(chatId, fromId, this.sendPhoto(chatId, photo, options))
-    }
-
-    public sendInteractiveAudio(chatId: idType, fromId: idType, audio: fileType, options?: ISendAudioOptions): Promise<Message> {
-        return this.sendInteractive(chatId, fromId, this.sendAudio(chatId, audio, options))
-    }
-
-    public sendInteractiveDocument(chatId: idType, fromId: idType, path: fileType, options?: IReplyOptions): Promise<Message> {
-        return this.sendInteractive(chatId, fromId, this.sendDocument(chatId, path, options))
-    }
-
-    public sendInteractiveSticker(chatId: idType, fromId: idType, path: fileType, options?: IReplyOptions): Promise<Message> {
-        return this.sendInteractive(chatId, fromId, this.sendSticker(chatId, path, options))
-    }
-
-    public sendInteractiveVideo(chatId: idType, fromId: idType, path: fileType, options?: ISendVideoOptions): Promise<Message> {
-        return this.sendInteractive(chatId, fromId, this.sendVideo(chatId, path, options))
-    }
-
-    public sendInteractiveLocation(chatId: idType, fromId: idType, latitude: number, longitude: number, options?: IReplyOptions): Promise<Message> {
-        return this.sendInteractive(chatId, fromId, this.sendLocation(chatId, latitude, longitude, options))
+        }
     }
 
     protected getTicketFromInfo(chatId: idType, fromId: idType): string {
@@ -127,7 +98,7 @@ export class TelegramTypedBot extends TelegramBot {
         return this.getTicketFromInfo(msg.chat.id, msg.from.id)
     }
 
-    protected addToWaitingResponse(ticket: string, resolve: (msg: Message) => void) {
+    protected addToWaiting(ticket: string, resolve: (msg: Message) => void) {
         this.waitingResponse[ticket] = resolve
     }
 
@@ -135,59 +106,57 @@ export class TelegramTypedBot extends TelegramBot {
         delete this.waitingResponse[ticket];
     }
 
-    protected onMessage(event: string, msg: Message) {
+    protected receivedMessage(event: string, msg: Message) {
         const ticket = this.getTicketFromMessage(msg)
         const pendingResolve = this.waitingResponse[ticket]
 
         if (pendingResolve) {
-            this.onResponseMessage(msg, ticket, pendingResolve)
+            this.receivedResponseMessage(msg, ticket, pendingResolve)
         } else {
-            this.onNonResponseMessage(event, msg)
+            this.receivedNonResponseMessage(event, msg)
         }
     }
 
-    protected onResponseMessage(msg: Message, ticket: string, pendingResolve: (msg: Message) => void) {
+    protected receivedResponseMessage(msg: Message, ticket: string, pendingResolve: (msg: Message) => void) {
         pendingResolve(msg)
         this.removeFromWaiting(ticket)
     }
 
-    protected onNonResponseMessage(event: string, msg: Message) {
+    protected receivedNonResponseMessage(event: string, msg: Message) {
         const action = this.events[event]
         if (action) {
-            action(this, msg)
+            action(msg)
         } else {
-            this.onText(msg)
+            this.receivedText(msg)
         }
     }
 
-    protected onText(msg: Message) {
+    protected receivedText(msg: Message) {
         const text = msg.text.trim()
         const isCommand = text.lastIndexOf('/', 0) === 0
         if (isCommand) {
             const command = text.split(' ')[0]
             const arg = text.replace(command, '').trim()
-            this.onCommand(command, arg, msg)
+            this.receivedCommand(command, arg, msg)
         } else {
-            this.onPlainText(text, msg)
+            this.receivedPlainText(text, msg)
         }
     }
 
-    protected onCommand(command: string, arg: string, msg: Message) {
+    protected receivedCommand(command: string, arg: string, msg: Message) {
         const action = this.commands[command]
         if (action) {
-            action(this, msg, arg)
+            action(msg)
         } else if (this.missingAction) {
-            this.missingAction(this, msg, arg)
+            this.missingAction(msg)
         }
     }
 
-    protected onPlainText(text: string, msg: Message) {
-        if (this.plainTextAction) {
-            this.plainTextAction(this, msg, msg.text)
-        }
+    protected receivedPlainText(text: string, msg: Message) {
+        if (this.plainTextAction) this.plainTextAction(msg)
     }
 
-    public setCommand(commands: string | string[], action: BotAction) {
+    public onCommand(commands: string | string[], action: Action) {
         if (commands instanceof Array) {
             commands.forEach(c => this.commands[<string>c] = action)
         } else {
@@ -196,18 +165,16 @@ export class TelegramTypedBot extends TelegramBot {
         console.log('Registered commands:', commands)
     }
 
-    public command(...commands: string[]) {
-        return (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-            if (commands.length === 0) {
-                this.setCommand(`/${propertyKey}`, descriptor.value)
-            } else {
-                this.setCommand(commands, descriptor.value)
-            }
-            return descriptor;
+    public execCommand(command: string, msg: Message): Promise<Message> {
+        const action = this.commands[command]
+        if (action) {
+            return action(msg)
+        } else {
+            return Promise.reject(`Action for command '${command}' not found`)
         }
     }
 
-    public setEvent(events: string | string[], action: BotAction) {
+    public onEvent(events: string | string[], action: Action) {
         if (events instanceof Array) {
             events.forEach(e => this.events[<string>e] = action)
         } else {
@@ -216,50 +183,27 @@ export class TelegramTypedBot extends TelegramBot {
         console.log('Registered events:', events)
     }
 
-    public event(...events: string[]) {
-        return (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-            if (events.length === 0) {
-                this.setEvent(propertyKey, descriptor.value)
-            } else {
-                this.setEvent(events, descriptor.value)
-            }
-            return descriptor;
+    public execEvent(event: string, msg: Message): Promise<Message> {
+        const action = this.events[event]
+        if (action) {
+            return action(msg)
+        } else {
+            return Promise.reject(`Action for event '${event}' not found`)
         }
     }
 
-    public setPlainText(action: BotAction) {
+    public onPlainText(action: Action) {
         this.plainTextAction = action
         console.log('Registered plain text action.')
     }
 
-    public get plainText() {
-        return (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-            this.setPlainText(descriptor.value)
-            return descriptor;
-        }
-    }
-
-    public setMissingCommand(action: BotAction) {
+    public onMissingCommand(action: Action) {
         this.missingAction = action
         console.log('Registered missing action.')
     }
 
-    public get missingCommand() {
-        return (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-            this.setMissingCommand(descriptor.value)
-            return descriptor;
-        }
-    }
-
-    public setInitialization(action: (bot: TelegramBot, me: User) => void) {
+    public onInitialization(action: (me: User) => void) {
         this.initializationAction = action
         console.log('Registered initialization action.')
-    }
-
-    public get initialization() {
-        return (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-            this.setInitialization(descriptor.value)
-            return descriptor;
-        }
     }
 }

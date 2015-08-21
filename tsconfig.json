@@ -24,7 +24,6 @@
         "typings/bluebird/bluebird.d.ts",
         "typings/chai/chai.d.ts",
         "typings/mocha/mocha.d.ts",
-        "typings/node-telegram-bot-api/node-telegram-bot-api.d.ts",
         "typings/node/node.d.ts",
         "typings/tsd.d.ts",
         "src/typedgram-bot.ts",

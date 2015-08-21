@@ -1,6 +1,6 @@
 /// <reference path="../definitions/scr/typedgram-bot.d.ts"/>
 
-import {TelegramTypedBot as Bot, IServerOptions, TelegramEvent} from './../index'
+import {TelegramTypedBot as Bot, IServerOptions, TelegramEvent} from 'typedgram-bot'
 
 const PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT      // do not choose 443
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN                       // from @botfather
@@ -15,77 +15,72 @@ const server: IServerOptions = {
 
 const bot = new Bot(TELEGRAM_TOKEN, server);
 
-class DefaultActions {
-    @bot.initialization
-    static init(bot: Bot, me: User) {
-        console.log(`
-        ------------------------------
-        Bot successfully deployed!
-        ------------------------------
-        Bot info:
-        - ID: ${me.id}
-        - Name: ${me.first_name}
-        - Username: ${me.username}
+bot.onInitialization((me) => {
+    console.log(`
+    ------------------------------
+    Bot successfully deployed!
+    ------------------------------
+    Bot info:
+    - ID: ${me.id}
+    - Name: ${me.first_name}
+    - Username: ${me.username}
 
-        Server info:
-        - Host: ${server.host}
-        - Port: ${server.port}
-        - Domain: ${server.domain}
-        - Node version: ${process.version}
-        ------------------------------
-        `)
-    }
-}
+    Server info:
+    - Host: ${server.host}
+    - Port: ${server.port}
+    - Domain: ${server.domain}
+    - Node version: ${process.version}
+    ------------------------------
+    `)
+})
 
-class MyActions {
-    @bot.command('/hello_world', '/helloworld')
-    static hello(bot: Bot, msg: Message, arg?: string) {
-        bot.sendMessage(msg.chat.id, 'Hello world!')
-    }
+bot.onCommand('/help', msg => {
+    return bot.sendMessage(msg.chat.id, 'Call the action /echo to perform an echo')
+})
 
-    @bot.event(TelegramEvent.photo, TelegramEvent.document)
-    static photo(bot: Bot, msg: Message) {
-        bot.sendMessage(msg.chat.id, 'Nice pic!')
-    }
+bot.onCommand('/echo', msg => {
+    return bot.sendMessage(msg.chat.id, 'What to echo?')
+    .then(bot.waitResponse(msg))
+    .then(response => {
+        return bot.sendMessage(msg.chat.id, 'echo: ' + response.text)
+    })
+    .catch(err => {
+        return bot.execCommand('/help', msg)
+    })
+})
 
-    @bot.command() // '/media'
-    static media(bot: Bot, msg: Message, arg?: string) {
-        bot.sendInteractiveMessage(
-            msg.chat.id,
-            msg.from.id,
-            'Select media type:',
-            {
-                reply_to_message_id: msg.message_id,
-                reply_markup: {
-                    keyboard: [
-                        ['Image', 'Document'],
-                    ],
-                    force_reply: true,
-                    one_time_keyboard: true,
-                    selective: true,
-                },
+bot.onCommand(['/apps', '/applications'], msg => {
+    return bot.sendMessage(msg.chat.id, 'Select a meme', {
+        reply_to_message_id: msg.message_id,
+        reply_markup: {
+            keyboard: [
+                ['Telegram'],
+                ['Whatsapp'],
+            ],
+            force_reply: true,
+            one_time_keyboard: true,
+            selective: true
+        },
+    })
+    .then(bot.waitResponse(msg))
+    .then(response => {
+        const keyboard = {
+            reply_to_message_id: response.message_id,
+            reply_markup: {
+                hide_keyboard: true
             }
-        ).then(response => {
-            const hideKeyboard = {
-                reply_to_message_id: response.message_id,
-                reply_markup: { hide_keyboard: true },
-            }
+        }
 
-            switch (response.text) {
-                case 'Image': {
-                    bot.sendMessage(response.chat.id, 'I got this, what do you have?', hideKeyboard)
-                    .then(function(sent) {
-                        return bot.sendInteractivePhoto(response.chat.id, response.from.id, './example/image.png', hideKeyboard)
-                    })
-                    .then(function(response) {
-                        return bot.sendMessage(response.chat.id, 'Nice!', { reply_to_message_id: response.message_id })
-                    })
-                    break
-                }
-                case 'Document': {
-                    bot.sendDocument(response.chat.id, './example/bot.js', hideKeyboard)
-                }
+        switch(response.text) {
+            case 'Telegram': {
+                return bot.sendPhoto(response.chat.id, './example/images/telegram.png', keyboard)
             }
-        })
-    }
-}
+            case 'Whatsapp': {
+                return bot.sendPhoto(response.chat.id, './example/images/whatsapp.png', keyboard)
+            }
+            default: {
+                return bot.sendMessage(response.chat.id, 'None selected', keyboard)
+            }
+        }
+    })
+})
