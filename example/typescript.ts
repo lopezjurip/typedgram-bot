@@ -15,7 +15,7 @@ const server: IServerOptions = {
 
 const bot = new Bot(TELEGRAM_TOKEN, server);
 
-bot.onInitialization((me) => {
+bot.onInitialization(me => {
     console.log(`
     ------------------------------
     Bot successfully deployed!
@@ -50,7 +50,7 @@ bot.onCommand('/echo', msg => {
 })
 
 bot.onCommand(['/apps', '/applications'], msg => {
-    return bot.sendMessage(msg.chat.id, 'Select a meme', {
+    return bot.sendMessage(msg.chat.id, 'Select an app', {
         reply_to_message_id: msg.message_id,
         reply_markup: {
             keyboard: [
