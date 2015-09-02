@@ -82,7 +82,7 @@ bot.onInitialization(me => {
 
 ### How to response to  `/commands`
 
-When you register a command the associated method will be called. You can declare associate multiple commands to the same action. Also if you don't declare the command, the function name will be used.
+When you register a command the associated method will be called. You can declare associate multiple commands to the same action.
 
 ##### Example
 
@@ -95,7 +95,9 @@ bot.onCommand(['/hello_world', '/hello'], msg => {
 
 #### Interactive Responses
 
-To make the interactions with the API easier, after sending a message of any type, make the *resolve* promise of that operation to wait for the user reply with `bot.waitResponse(msg)` where `msg` is the message from the user who triggered the interactive operation.
+To make the interactions with the API easier, after sending a message of any type, make the *resolve* promise of that operation to wait for the user reply with `bot.waitResponse(msg)` where `msg` is the message from the user who triggered the interactive operation. This works saving the `userId` and the `chatId`.
+
+Also, there is a timeout of `10000ms` that you can change by adding a second parameter, example: `bot.waitResponse(msg, 20000)`. On timeout the promise is rejected with a `TimeoutError`. See: [Bluebird API reference](https://github.com/petkaantonov/bluebird/blob/master/API.md#timeoutint-ms--string-message---promise).
 
 ```ts
 bot.onCommand(['/apps', '/applications'], msg => {
@@ -163,3 +165,5 @@ $ export PORT="8080"
 $ export LOCAL_IP="127.0.0.1"
 $ export LOCAL_URL="SUBDOMAIN.ngrok.com"
 ```
+
+Run your bot and it everything is ok, the `initializationAction` should be executed.
