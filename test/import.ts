@@ -1,3 +1,3 @@
-/// <reference path="../definitions/src/typedgram-bot.d.ts"/>
+// /// <reference path="../definitions/src/typedgram-bot.d.ts"/>
 
-var a = require("./../index");
+// var a = require("./../index");

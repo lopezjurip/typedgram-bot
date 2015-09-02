@@ -1,4 +1,4 @@
-# Typedgram Bot
+# Typedgram Bot [![Build Status](https://travis-ci.org/mrpatiwi/typedgram-bot.svg)](https://travis-ci.org/mrpatiwi/typedgram-bot)
 > Under heavy development
 
 Interactive Telegram Bot API.
