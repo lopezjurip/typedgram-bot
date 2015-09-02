@@ -1,6 +1,6 @@
 {
     "name": "typedgram-bot",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "description": "Interactive Telegram Bot API wrapper using webhooks. Written in Typescript (with definitions).",
     "author": "Patricio Lópex <lopezjuripatricio@gmail.com> (https://lopezjuri.com/)",
     "homepage": "https://github.com/mrpatiwi/typedgram-bot",
@@ -17,10 +17,11 @@
     }],
     "scripts": {
         "build": "gulp build",
-        "test": "gulp build; mocha"
+        "test": "mocha"
     },
     "typescript": {
         "definitions": [
+            "definitions/src/node-telegram-bot-api.d.ts",
             "definitions/src/typedgram-bot.d.ts"
         ]
     },
@@ -37,6 +38,7 @@
     },
     "devDependencies": {
         "chai": "^3.2.0",
+        "dts-bundle": "^0.3.0",
         "gulp": "^3.9.0",
         "gulp-typedoc": "^1.2.1",
         "gulp-typescript": "^2.8.0",

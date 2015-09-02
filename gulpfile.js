@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var typedoc = require('gulp-typedoc');
 var merge = require('merge2');
+var dts = require('dts-bundle');
 
 var tsProject = ts.createProject('./tsconfig.json');
 
@@ -12,6 +13,13 @@ gulp.task('script', function() {
         tsResult.dts.pipe(gulp.dest('./definitions')),
         tsResult.js.pipe(gulp.dest('./lib')),
     ]);
+});
+
+gulp.task('definitions', ['script'], function() {
+  dts.bundle({
+    name: 'typedgram-bot',
+    main: 'definitions/src/typedgram-bot.d.ts',
+  });
 });
 
 gulp.task('typedoc', function() {
@@ -26,5 +34,5 @@ gulp.task('typedoc', function() {
   ;
 });
 
-gulp.task('build', ['script']);
+gulp.task('build', ['script', 'definitions']);
 gulp.task('default', ['build']);

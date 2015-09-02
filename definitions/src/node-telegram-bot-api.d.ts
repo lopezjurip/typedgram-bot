@@ -1,6 +1,3 @@
-/// <reference path="../node/node.d.ts"/>
-/// <reference path="../bluebird/bluebird.d.ts"/>
-
 interface IPollingOptions {
     timeout?: number | string
     interval?: number | string
