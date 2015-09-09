@@ -1,5 +1,5 @@
 # Typedgram Bot
-[![Build Status](https://travis-ci.org/mrpatiwi/typedgram-bot.svg)](https://travis-ci.org/mrpatiwi/typedgram-bot) [![dependencies](https://david-dm.org/mrpatiwi/typedgram-bot.svg)](https://david-dm.org/mrpatiwi/typedgram-bot)
+[![npm version][npm-image]][npm-url] [![Build Status][ci-image]][ci-url] [![dependencies][dependencies-image]][dependencies-url]
 
 **Interactive Telegram Bot API.**
 
@@ -167,3 +167,11 @@ $ export LOCAL_URL="SUBDOMAIN.ngrok.com"
 ```
 
 Run your bot and it everything is ok, the `initializationAction` should be executed.
+
+
+[ci-image]: https://travis-ci.org/mrpatiwi/typedgram-bot.svg
+[ci-url]: https://travis-ci.org/mrpatiwi/typedgram-bot
+[npm-image]: https://badge.fury.io/js/typedgram-bot.svg
+[npm-url]: http://badge.fury.io/js/typedgram-bot
+[dependencies-image]: https://david-dm.org/mrpatiwi/typedgram-bot.svg
+[dependencies-url]: https://david-dm.org/mrpatiwi/typedgram-bot
