@@ -1,6 +1,6 @@
 {
     "name": "typedgram-bot",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "Interactive Telegram Bot API wrapper using webhooks. Written in Typescript (with definitions).",
     "author": "Patricio Lópex <lopezjuripatricio@gmail.com> (https://lopezjuri.com/)",
     "homepage": "https://github.com/mrpatiwi/typedgram-bot",

@@ -17,6 +17,7 @@ If you are using **[tsd](https://github.com/DefinitelyTyped/tsd)**, run `tsd lin
 
 ```ts
 /// <reference path="../node_modules/typedgram-bot/definitions/src/typedgram-bot.d.ts" />
+/// <reference path="../node_modules/typedgram-bot/definitions/src/node-telegram-bot-api.d.ts"/>
 ```
 
 ## Typescript Usage
