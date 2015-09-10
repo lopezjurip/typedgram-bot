@@ -137,7 +137,7 @@ bot.onCommand(['/apps', '/applications'], msg => {
 })
 ```
 
-See [examples](examples) or check the [definitions](definitions). **There is a example showing how to use it on a [Javascript project](examples/javascript.js).**
+See [examples](examples) or check the [definitions](definitions). **There is a example showing how to use it on a [Javascript project](example/javascript.js).**
 
 ### Development
 
