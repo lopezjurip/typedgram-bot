@@ -81,13 +81,13 @@ export class TelegramTypedBot extends TelegramBot {
                 ticket = this.getTicketFromMessage(msg)
                 this.addToWaiting(ticket, resolve)
             })
-                .cancellable()
-                .timeout(timeout)
-                .catch(Promise.TimeoutError, err => {
-                    if (ticket !== '') this.removeFromWaiting(ticket)
-                    throw err
-                    return err
-                })
+            .cancellable()
+            .timeout(timeout)
+            .catch(Promise.TimeoutError, err => {
+                if (ticket !== '') this.removeFromWaiting(ticket)
+                throw err
+                return err
+            })
         }
     }
 
