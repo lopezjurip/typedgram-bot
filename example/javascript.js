@@ -1,9 +1,9 @@
 var telegram = require('typedgram-bot');
 
-var PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT; // do not choose 443
-var TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN; // from @botfather
-var HOST = process.env.OPENSHIFT_NODEJS_IP || process.env.LOCAL_IP; // whitout port
-var DOMAIN = process.env.OPENSHIFT_APP_DNS || process.env.LOCAL_URL; // whitout http
+var PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT;      // do not choose 443
+var TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;                       // from @botfather
+var HOST = process.env.OPENSHIFT_NODEJS_IP || process.env.LOCAL_IP;    // whitout port
+var DOMAIN = process.env.OPENSHIFT_APP_DNS || process.env.LOCAL_URL;   // whitout http
 
 var server = {
   host: HOST,
@@ -16,10 +16,6 @@ var bot = new telegram.TelegramTypedBot(TELEGRAM_TOKEN, server);
 bot.onInitialization(function(me) {
   console.log('Bot info:', me);
   console.log('Server info:', server);
-});
-
-bot.setCommand(['/hello_world', '/helloworld'], function(bot, msg, arg) {
-  bot.sendMessage(msg.chat.id, 'Hello world!');
 });
 
 bot.onCommand('/help', function(msg) {
