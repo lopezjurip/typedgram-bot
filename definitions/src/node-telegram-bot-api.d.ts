@@ -160,8 +160,8 @@ interface IQs {
     qs: IReplyOptions
 }
 
-declare module "node-telegram-bot-api" {
-    import {Stream} from "stream";
+declare module 'node-telegram-bot-api' {
+    import {Stream} from 'stream';
 
     type idType = number | string
     type fileType = string | Stream

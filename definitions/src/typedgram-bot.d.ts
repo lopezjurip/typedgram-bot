@@ -5,9 +5,9 @@
 //   ../../typings/bluebird/bluebird.d.ts
 
 declare module 'typedgram-bot' {
-    import TelegramBot = require("node-telegram-bot-api");
-    import { Stream } from "stream";
-    import Promise = require("bluebird");
+    import TelegramBot = require('node-telegram-bot-api');
+    import { Stream } from 'stream';
+    import Promise = require('bluebird');
     export interface IServerOptions {
         host: string;
         port: number;
