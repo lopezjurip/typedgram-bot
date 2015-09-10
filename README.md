@@ -122,7 +122,7 @@ bot.onCommand(['/apps', '/applications'], msg => {
             }
         }
 
-        switch(response.text) {
+        switch (response.text) {
             case 'Telegram': {
                 return bot.sendPhoto(response.chat.id, './example/images/telegram.png', keyboard)
             }
