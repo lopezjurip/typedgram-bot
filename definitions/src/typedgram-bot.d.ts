@@ -11,7 +11,9 @@ declare module 'typedgram-bot' {
     export interface IServerOptions {
         host: string;
         port: number;
-        domain: string;
+        domain?: string;
+        key?: string;
+        cert?: string;
     }
     export const TelegramEvent: {
         sticker: string;
@@ -44,6 +46,7 @@ declare module 'typedgram-bot' {
         initializationAction: (me: User) => void;
         missingAction: Action;
         plainTextAction: Action;
+        responseTimeout: number;
         constructor(token: string, server: IServerOptions);
         protected _request(path: string, qsopt?: IQs): Promise<Message>;
         waitResponse(msg: Message, timeout?: number): (msg: Message) => Promise<Message>;

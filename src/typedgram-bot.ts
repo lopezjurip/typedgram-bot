@@ -5,12 +5,12 @@ import TelegramBot = require('node-telegram-bot-api');
 import {Stream} from 'stream';
 import Promise = require('bluebird');
 
-const TIMEOUT = 10000
-
 export interface IServerOptions {
     host: string
     port: number
-    domain: string
+    domain?: string
+    key?: string
+    cert?: string
 }
 
 export const TelegramEvent = {
@@ -43,6 +43,8 @@ export class TelegramTypedBot extends TelegramBot {
     public missingAction: Action
     public plainTextAction: Action
 
+    public responseTimeout: number = 10000;
+
     constructor(token: string, server: IServerOptions) {
         super(token, { webHook: { port: server.port, host: server.host } })
         this.setWebHook(server.domain + ':443/bot' + token)
@@ -74,7 +76,7 @@ export class TelegramTypedBot extends TelegramBot {
         return super._request(path, qsopt)
     }
 
-    public waitResponse(msg: Message, timeout: number = TIMEOUT): (msg: Message) => Promise<Message> {
+    public waitResponse(msg: Message, timeout: number = this.responseTimeout): (msg: Message) => Promise<Message> {
         return (response: Message) => {
             var ticket = ''
             return new Promise<Message>((resolve, reject) => {
