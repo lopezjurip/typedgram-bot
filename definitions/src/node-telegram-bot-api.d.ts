@@ -138,6 +138,7 @@ interface IReplyOptions {
 }
 
 interface ISendMessageOptions extends IReplyOptions {
+    parse_mode?: string
     disable_web_page_preview?: boolean
 }
 
