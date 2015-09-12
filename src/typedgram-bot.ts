@@ -34,17 +34,54 @@ export type Action = (msg: Message) => Promise<Message>
 export type idType = number | string
 export type fileType = string | Stream
 
+/**
+ * Subclass of TelegramBot provided by node-telegram-bot-api
+ */
 export class TelegramTypedBot extends TelegramBot {
+
+    /**
+     * Collection containing every registered command with the respective action.
+     */
     public commands: { [command: string]: Action } = {}
+
+    /**
+     * Collection containing every registered event with the respective action.
+     * Events like receiving a photo, sticker, etc.
+     */
     public events: { [command: string]: Action } = {}
+
     protected waitingResponse: { [ticket: string]: (msg: Message) => void } = {}
 
+    /**
+     * This will be executed when successfully connected to Telegram servers.
+     * @type {[type]}
+     */
     public initializationAction: (me: User) => void
+
+    /**
+     * Action to response to a non-registered action.
+     * @type {Action}
+     */
     public missingAction: Action
+
+    /**
+     * Action to response to plain text messages (without command notation '/').
+     * @type {Action}
+     */
     public plainTextAction: Action
 
+    /**
+     * Timeout to reject the [[waitResponse] promise, in that case throws a [[Promise.TimeoutError]].
+     * @type {number}
+     */
     public responseTimeout: number = 10000;
 
+    /**
+     * Start a bot with a token from Botfather.
+     * @param  {string}         token              Telegram Bot API Token
+     * @param  {IServerOptions} server             Server configuration to stablish a connection to Telegram servers.
+     * @return {[TelegramTypedBot]}                A instance of a bot.
+     */
     constructor(token: string, server: IServerOptions) {
         super(token, { webHook: { port: server.port, host: server.host } })
         this.setWebHook(server.domain + ':443/bot' + token)
@@ -76,6 +113,13 @@ export class TelegramTypedBot extends TelegramBot {
         return super._request(path, qsopt)
     }
 
+    /**
+     * When you send a message, set this on the resolution of the promise to wait for the user response of that message.
+     * The response petition is registered to the user and chat id.
+     * @param  {Message}   msg Message sent by user, we need this to save the chatId and userId.
+     * @param  {number =   this.responseTimeout} timeout Reject this operation after a timeout in milliseconds.
+     * @return {[type]}        A promise with the user write-back message.
+     */
     public waitResponse(msg: Message, timeout: number = this.responseTimeout): (msg: Message) => Promise<Message> {
         return (response: Message) => {
             var ticket = ''
@@ -159,6 +203,14 @@ export class TelegramTypedBot extends TelegramBot {
         if (this.plainTextAction) this.plainTextAction(msg)
     }
 
+    /**
+     * Register a command or multiple commands as strings with a '/' prefix.
+     * The action will be called when a user uses the command.
+     * Example:
+     * bot.onCommand('/hello'), msg => { /... });
+     * @param  {string |      string[]}    commands Commands to register.
+     * @param  {Action}    action Must recieve a [[Message]]. This is called when a user uses the command.
+     */
     public onCommand(commands: string | string[], action: Action) {
         if (commands instanceof Array) {
             commands.forEach(c => this.commands[<string>c] = action)
@@ -168,6 +220,12 @@ export class TelegramTypedBot extends TelegramBot {
         console.log('Registered commands:', commands)
     }
 
+    /**
+     * You can manually execute commands registered in [[onCommand]] with a specific message.
+     * @param  {string}           command Registered command to call, remember the '/' prefix.
+     * @param  {Message}          msg     Message to use in that command.
+     * @return {Promise<Message>}         Send operation promise returned by that command. Rejects if the command was not registerd.
+     */
     public execCommand(command: string, msg: Message): Promise<Message> {
         const action = this.commands[command]
         if (action) {
@@ -177,6 +235,13 @@ export class TelegramTypedBot extends TelegramBot {
         }
     }
 
+    /**
+     * Register a event or multiple events of [[TelegramEvent]].
+     * Example:
+     * bot.onEvent(TelegramEvent.photo), msg => { /... });
+     * @param  {string |      string[]}    events Event from [[TelegramEvent]].
+     * @param  {Action}    action Action to call when the event is triggered.
+     */
     public onEvent(events: string | string[], action: Action) {
         if (events instanceof Array) {
             events.forEach(e => this.events[<string>e] = action)
@@ -186,6 +251,12 @@ export class TelegramTypedBot extends TelegramBot {
         console.log('Registered events:', events)
     }
 
+    /**
+     * You can manually execute events registered in [[onEvent]] with a specific message.
+     * @param  {string}           event Registered event to call from [[TelegramEvent]].
+     * @param  {Message}          msg   Message to use in that event associated action.
+     * @return {Promise<Message>}       Send operation promise returned by that event. Rejects if the event was not registerd.
+     */
     public execEvent(event: string, msg: Message): Promise<Message> {
         const action = this.events[event]
         if (action) {

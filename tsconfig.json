@@ -6,7 +6,7 @@
         "emitDecoratorMetadata": true,
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": false,
-        "removeComments": true,
+        "removeComments": false,
         "preserveConstEnums": true,
         "sourceMap": false,
         "declaration": true,
