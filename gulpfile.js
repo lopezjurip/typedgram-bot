@@ -30,6 +30,7 @@ gulp.task('typedoc', function() {
         target: 'es5',
         out: 'docs/',
         name: 'Typedgram Bot',
+        includeDeclarations: true,
       }))
   ;
 });

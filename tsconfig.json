@@ -6,7 +6,7 @@
         "emitDecoratorMetadata": true,
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": false,
-        "removeComments": true,
+        "removeComments": false,
         "preserveConstEnums": true,
         "sourceMap": false,
         "declaration": true,
@@ -14,6 +14,7 @@
         "outDir": "./lib"
     },
     "filesGlob": [
+        "definitions/src/node-telegram-bot-api.d.ts",
         "typings/**/*.ts",
         "src/**/*.ts",
         "test/**/*.ts",
@@ -21,6 +22,7 @@
         "!./example/typescript.ts"
     ],
     "files": [
+        "definitions/src/node-telegram-bot-api.d.ts",
         "typings/bluebird/bluebird.d.ts",
         "typings/chai/chai.d.ts",
         "typings/mocha/mocha.d.ts",
