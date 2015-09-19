@@ -710,7 +710,7 @@ declare module 'node-telegram-bot-api' {
          * See: https://core.telegram.org/bots/api#sendaudio
          *
          * @param  {idType}            chatId  Unique identifier for the message recipient — [[User]] or [[GroupChat]] id
-         * @param  {fileType}          photo   A file path or a Stream. Can also be a file_id previously
+         * @param  {fileType}          audio   A file path or a Stream. Can also be a file_id previously
          * @param  {ISendAudioOptions} options Additional Telegram query options
          * @return {Promise<Message>}          Send operation promise
          */
@@ -722,12 +722,12 @@ declare module 'node-telegram-bot-api' {
          *
          * See: https://core.telegram.org/bots/api#senddocument
          *
-         * @param  {idType}            chatId  Unique identifier for the message recipient — [[User]] or [[GroupChat]] id
-         * @param  {fileType}          photo   A file path or a Stream. Can also be a file_id previously
-         * @param  {IReplyOptions}     options Additional Telegram query options
-         * @return {Promise<Message>}          Send operation promise
+         * @param  {idType}            chatId   Unique identifier for the message recipient — [[User]] or [[GroupChat]] id
+         * @param  {fileType}          document A file path or a Stream. Can also be a file_id previously
+         * @param  {IReplyOptions}     options  Additional Telegram query options
+         * @return {Promise<Message>}           Send operation promise
          */
-        public sendDocument(chatId: idType, path: fileType, options?: IReplyOptions): Promise<Message>
+        public sendDocument(chatId: idType, document: fileType, options?: IReplyOptions): Promise<Message>
 
         /**
          * Use this method to send .webp stickers. On success, the sent [[Message]] is returned.
@@ -735,11 +735,11 @@ declare module 'node-telegram-bot-api' {
          * See: https://core.telegram.org/bots/api#sendsticker
          *
          * @param  {idType}            chatId  Unique identifier for the message recipient — [[User]] or [[GroupChat]] id
-         * @param  {fileType}          photo   A file path or a Stream. Can also be a file_id previously
+         * @param  {fileType}          sticker A file path or a Stream. Can also be a file_id previously
          * @param  {IReplyOptions}     options Additional Telegram query options
          * @return {Promise<Message>}          Send operation promise
          */
-        public sendSticker(chatId: idType, path: fileType, options?: IReplyOptions): Promise<Message>
+        public sendSticker(chatId: idType, sticker: fileType, options?: IReplyOptions): Promise<Message>
 
         /**
          * Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as [[Document]]).
@@ -749,11 +749,12 @@ declare module 'node-telegram-bot-api' {
          * See: https://core.telegram.org/bots/api#sendvideo
          *
          * @param  {idType}            chatId  Unique identifier for the message recipient — [[User]] or [[GroupChat]] id
-         * @param  {fileType}          photo   A file path or a Stream. Can also be a file_id previously
+         * @param  {fileType}          video   A file path or a Stream. Can also be a file_id previously
          * @param  {ISendVideoOptions} options Additional Telegram query options
          * @return {Promise<Message>}          Send operation promise
          */
-        public sendVideo(chatId: idType, path: fileType, options?: ISendVideoOptions): Promise<Message>
+        public sendVideo(chatId: idType, video: fileType, options?: ISendVideoOptions): Promise<Message>
+
         /**
          * Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message.
          * For this to work, your audio must be in an .ogg file encoded with OPUS (other formats may be sent as [[Audio]] or [[Document]]).
