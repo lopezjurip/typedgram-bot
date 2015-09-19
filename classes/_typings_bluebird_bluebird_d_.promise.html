@@ -101,11 +101,14 @@
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-parent-kind-class tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.cancellationerror.html" class="tsd-kind-icon">Cancellation<wbr>Error</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-class tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-kind-icon">Concurrency<wbr>Option</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.inspection.html" class="tsd-kind-icon">Inspection</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-class tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.operationalerror.html" class="tsd-kind-icon">Operational<wbr>Error</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-class tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.promisifyalloptions.html" class="tsd-kind-icon">Promisify<wbr>All<wbr>Options</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-class tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.rangeerror.html" class="tsd-kind-icon">Range<wbr>Error</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-class tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.rejectionerror.html" class="tsd-kind-icon">Rejection<wbr>Error</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.resolver.html" class="tsd-kind-icon">Resolver</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-class tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.spreadoption.html" class="tsd-kind-icon">Spread<wbr>Option</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-kind-icon">Thenable</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-class tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.timeouterror.html" class="tsd-kind-icon">Timeout<wbr>Error</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-class tsd-is-external"><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.typeerror.html" class="tsd-kind-icon">Type<wbr>Error</a></li>
@@ -177,6 +180,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static tsd-is-external"><a href="_typings_bluebird_bluebird_d_.promise.html#defer" class="tsd-kind-icon">defer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static tsd-is-external"><a href="_typings_bluebird_bluebird_d_.promise.html#delay-1" class="tsd-kind-icon">delay</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static tsd-is-external"><a href="_typings_bluebird_bluebird_d_.promise.html#filter-1" class="tsd-kind-icon">filter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_typings_bluebird_bluebird_d_.promise.html#fromnode" class="tsd-kind-icon">from<wbr>Node</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_typings_bluebird_bluebird_d_.promise.html#is" class="tsd-kind-icon">is</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static tsd-is-external"><a href="_typings_bluebird_bluebird_d_.promise.html#join" class="tsd-kind-icon">join</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_typings_bluebird_bluebird_d_.promise.html#longstacktraces" class="tsd-kind-icon">long<wbr>Stack<wbr>Traces</a></li>
@@ -1517,8 +1521,8 @@ promise.then(function(obj){
 					<a name="filter" class="tsd-anchor"></a>
 					<h3>filter</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">filter&lt;U&gt;<span class="tsd-signature-symbol">(</span>filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">filter&lt;U&gt;<span class="tsd-signature-symbol">(</span>filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;U&gt;<span class="tsd-signature-symbol">(</span>filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;U&gt;<span class="tsd-signature-symbol">(</span>filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1567,6 +1571,9 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -1610,6 +1617,9 @@ promise.then(function(obj){
 											</ul>
 										</li>
 									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -2246,8 +2256,8 @@ promise.then(function(obj){
 					<a name="map" class="tsd-anchor"></a>
 					<h3>map</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">map&lt;Q, U&gt;<span class="tsd-signature-symbol">(</span>mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">map&lt;Q, U&gt;<span class="tsd-signature-symbol">(</span>mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;Q, U&gt;<span class="tsd-signature-symbol">(</span>mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;Q, U&gt;<span class="tsd-signature-symbol">(</span>mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -2299,6 +2309,9 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -2346,6 +2359,9 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -2355,7 +2371,7 @@ promise.then(function(obj){
 					<a name="nodeify" class="tsd-anchor"></a>
 					<h3>nodeify</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">nodeify<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">nodeify<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.spreadoption.html" class="tsd-signature-type">SpreadOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">nodeify<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>sink<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -2396,6 +2412,9 @@ promise.then(function(obj){
 											</ul>
 										</li>
 									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.spreadoption.html" class="tsd-signature-type">SpreadOption</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -3366,7 +3385,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L626">typings/bluebird/bluebird.d.ts:626</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L645">typings/bluebird/bluebird.d.ts:645</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.cancellationerror.html" class="tsd-signature-type">CancellationError</a></h4>
@@ -3383,7 +3402,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L630">typings/bluebird/bluebird.d.ts:630</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L649">typings/bluebird/bluebird.d.ts:649</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.operationalerror.html" class="tsd-signature-type">OperationalError</a></h4>
@@ -3400,7 +3419,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L625">typings/bluebird/bluebird.d.ts:625</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L644">typings/bluebird/bluebird.d.ts:644</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.rangeerror.html" class="tsd-signature-type">RangeError</a></h4>
@@ -3417,7 +3436,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L629">typings/bluebird/bluebird.d.ts:629</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L648">typings/bluebird/bluebird.d.ts:648</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.rejectionerror.html" class="tsd-signature-type">RejectionError</a></h4>
@@ -3434,7 +3453,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L627">typings/bluebird/bluebird.d.ts:627</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L646">typings/bluebird/bluebird.d.ts:646</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.timeouterror.html" class="tsd-signature-type">TimeoutError</a></h4>
@@ -3451,7 +3470,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L628">typings/bluebird/bluebird.d.ts:628</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L647">typings/bluebird/bluebird.d.ts:647</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.typeerror.html" class="tsd-signature-type">TypeError</a></h4>
@@ -3471,7 +3490,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L451">typings/bluebird/bluebird.d.ts:451</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L457">typings/bluebird/bluebird.d.ts:457</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3496,7 +3515,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L453">typings/bluebird/bluebird.d.ts:453</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L459">typings/bluebird/bluebird.d.ts:459</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -3516,7 +3535,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L455">typings/bluebird/bluebird.d.ts:455</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L461">typings/bluebird/bluebird.d.ts:461</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -3536,7 +3555,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L457">typings/bluebird/bluebird.d.ts:457</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L463">typings/bluebird/bluebird.d.ts:463</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -3568,7 +3587,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L490">typings/bluebird/bluebird.d.ts:490</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L496">typings/bluebird/bluebird.d.ts:496</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3593,7 +3612,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L492">typings/bluebird/bluebird.d.ts:492</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L498">typings/bluebird/bluebird.d.ts:498</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -3613,7 +3632,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L494">typings/bluebird/bluebird.d.ts:494</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L500">typings/bluebird/bluebird.d.ts:500</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -3633,7 +3652,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L496">typings/bluebird/bluebird.d.ts:496</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L502">typings/bluebird/bluebird.d.ts:502</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -3831,7 +3850,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L424">typings/bluebird/bluebird.d.ts:424</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L430">typings/bluebird/bluebird.d.ts:430</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3963,20 +3982,20 @@ promise.then(function(obj){
 					<a name="filter-1" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> filter</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, option<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, option<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, option<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, option<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, option<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, option<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, option<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter&lt;R&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span>, filterer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, option<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L590">typings/bluebird/bluebird.d.ts:590</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L596">typings/bluebird/bluebird.d.ts:596</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4024,13 +4043,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L591">typings/bluebird/bluebird.d.ts:591</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L597">typings/bluebird/bluebird.d.ts:597</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4071,13 +4093,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L594">typings/bluebird/bluebird.d.ts:594</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L600">typings/bluebird/bluebird.d.ts:600</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4118,13 +4143,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L595">typings/bluebird/bluebird.d.ts:595</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L601">typings/bluebird/bluebird.d.ts:601</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4165,13 +4193,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L598">typings/bluebird/bluebird.d.ts:598</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L604">typings/bluebird/bluebird.d.ts:604</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4212,13 +4243,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L599">typings/bluebird/bluebird.d.ts:599</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L605">typings/bluebird/bluebird.d.ts:605</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4259,13 +4293,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L602">typings/bluebird/bluebird.d.ts:602</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L608">typings/bluebird/bluebird.d.ts:608</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4306,13 +4343,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L603">typings/bluebird/bluebird.d.ts:603</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L609">typings/bluebird/bluebird.d.ts:609</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4353,8 +4393,78 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="fromnode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Node<span class="tsd-signature-symbol">(</span>resolver<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L424">typings/bluebird/bluebird.d.ts:424</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a promise that is resolved by a node style callback function.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>resolver: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>callback: <span class="tsd-signature-type">function</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter-siganture">
+																	<ul class="tsd-signatures tsd-kind-type-literal">
+																		<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, result<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+																	</ul>
+																	<ul class="tsd-descriptions">
+																		<li class="tsd-description">
+																			<h4 class="tsd-parameters-title">Parameters</h4>
+																			<ul class="tsd-parameters">
+																				<li>
+																					<h5>err: <span class="tsd-signature-type">any</span></h5>
+																				</li>
+																				<li>
+																					<h5>result: <span class="tsd-signature-type">any</span></h5>
+																				</li>
+																			</ul>
+																			<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -4397,7 +4507,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L532">typings/bluebird/bluebird.d.ts:532</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L538">typings/bluebird/bluebird.d.ts:538</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4422,7 +4532,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L534">typings/bluebird/bluebird.d.ts:534</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L540">typings/bluebird/bluebird.d.ts:540</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4467,20 +4577,20 @@ promise.then(function(obj){
 					<a name="map-1" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> map</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-signature-type">Thenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">map&lt;R, U&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span>, mapper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L544">typings/bluebird/bluebird.d.ts:544</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L550">typings/bluebird/bluebird.d.ts:550</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4531,13 +4641,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L545">typings/bluebird/bluebird.d.ts:545</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L551">typings/bluebird/bluebird.d.ts:551</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4581,13 +4694,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L548">typings/bluebird/bluebird.d.ts:548</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L554">typings/bluebird/bluebird.d.ts:554</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4631,13 +4747,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L549">typings/bluebird/bluebird.d.ts:549</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L555">typings/bluebird/bluebird.d.ts:555</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4681,13 +4800,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L552">typings/bluebird/bluebird.d.ts:552</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L558">typings/bluebird/bluebird.d.ts:558</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4731,13 +4853,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L553">typings/bluebird/bluebird.d.ts:553</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L559">typings/bluebird/bluebird.d.ts:559</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4781,13 +4906,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L556">typings/bluebird/bluebird.d.ts:556</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L562">typings/bluebird/bluebird.d.ts:562</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4831,13 +4959,16 @@ promise.then(function(obj){
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L557">typings/bluebird/bluebird.d.ts:557</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L563">typings/bluebird/bluebird.d.ts:563</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4880,6 +5011,9 @@ promise.then(function(obj){
 											</ul>
 										</li>
 									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-signature-type">ConcurrencyOption</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_bluebird_bluebird_d_.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -4925,7 +5059,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L437">typings/bluebird/bluebird.d.ts:437</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L443">typings/bluebird/bluebird.d.ts:443</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4948,7 +5082,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L444">typings/bluebird/bluebird.d.ts:444</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L450">typings/bluebird/bluebird.d.ts:450</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5622,7 +5756,7 @@ promise.then(function(obj){
 					<a name="promisifyall" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> promisify<wbr>All</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">promisify<wbr>All<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span></li>
+						<li class="tsd-signature tsd-kind-icon">promisify<wbr>All<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_bluebird_bluebird_d_.promise.promisifyalloptions.html" class="tsd-signature-type">PromisifyAllOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -5642,6 +5776,9 @@ promise.then(function(obj){
 								<li>
 									<h5>target: <span class="tsd-signature-type">Object</span></h5>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_typings_bluebird_bluebird_d_.promise.promisifyalloptions.html" class="tsd-signature-type">PromisifyAllOptions</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
 						</li>
@@ -5658,7 +5795,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L468">typings/bluebird/bluebird.d.ts:468</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L474">typings/bluebird/bluebird.d.ts:474</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5679,7 +5816,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L470">typings/bluebird/bluebird.d.ts:470</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L476">typings/bluebird/bluebird.d.ts:476</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -5705,7 +5842,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L504">typings/bluebird/bluebird.d.ts:504</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L510">typings/bluebird/bluebird.d.ts:510</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5731,7 +5868,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L506">typings/bluebird/bluebird.d.ts:506</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L512">typings/bluebird/bluebird.d.ts:512</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -5751,7 +5888,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L508">typings/bluebird/bluebird.d.ts:508</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L514">typings/bluebird/bluebird.d.ts:514</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -5771,7 +5908,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L510">typings/bluebird/bluebird.d.ts:510</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L516">typings/bluebird/bluebird.d.ts:516</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -5807,7 +5944,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L567">typings/bluebird/bluebird.d.ts:567</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L573">typings/bluebird/bluebird.d.ts:573</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5870,7 +6007,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L568">typings/bluebird/bluebird.d.ts:568</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L574">typings/bluebird/bluebird.d.ts:574</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -5926,7 +6063,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L571">typings/bluebird/bluebird.d.ts:571</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L577">typings/bluebird/bluebird.d.ts:577</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -5982,7 +6119,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L572">typings/bluebird/bluebird.d.ts:572</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L578">typings/bluebird/bluebird.d.ts:578</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6038,7 +6175,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L575">typings/bluebird/bluebird.d.ts:575</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L581">typings/bluebird/bluebird.d.ts:581</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6094,7 +6231,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L576">typings/bluebird/bluebird.d.ts:576</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L582">typings/bluebird/bluebird.d.ts:582</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6150,7 +6287,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L579">typings/bluebird/bluebird.d.ts:579</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L585">typings/bluebird/bluebird.d.ts:585</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6206,7 +6343,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L580">typings/bluebird/bluebird.d.ts:580</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L586">typings/bluebird/bluebird.d.ts:586</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6384,7 +6521,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L705">typings/bluebird/bluebird.d.ts:705</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L724">typings/bluebird/bluebird.d.ts:724</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6455,7 +6592,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L478">typings/bluebird/bluebird.d.ts:478</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L484">typings/bluebird/bluebird.d.ts:484</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6481,7 +6618,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L480">typings/bluebird/bluebird.d.ts:480</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L486">typings/bluebird/bluebird.d.ts:486</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6501,7 +6638,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L482">typings/bluebird/bluebird.d.ts:482</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L488">typings/bluebird/bluebird.d.ts:488</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6521,7 +6658,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L484">typings/bluebird/bluebird.d.ts:484</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L490">typings/bluebird/bluebird.d.ts:490</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6553,7 +6690,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L520">typings/bluebird/bluebird.d.ts:520</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L526">typings/bluebird/bluebird.d.ts:526</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6583,7 +6720,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L522">typings/bluebird/bluebird.d.ts:522</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L528">typings/bluebird/bluebird.d.ts:528</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6606,7 +6743,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L524">typings/bluebird/bluebird.d.ts:524</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L530">typings/bluebird/bluebird.d.ts:530</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6629,7 +6766,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L526">typings/bluebird/bluebird.d.ts:526</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L532">typings/bluebird/bluebird.d.ts:532</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -6661,7 +6798,7 @@ promise.then(function(obj){
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L430">typings/bluebird/bluebird.d.ts:430</a></li>
+									<li>Defined in <a href="https://github.com/mrpatiwi/typedgram-bot/blob/master/typings/bluebird/bluebird.d.ts#L436">typings/bluebird/bluebird.d.ts:436</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6825,11 +6962,17 @@ promise.then(function(obj){
 							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-is-external">
 								<a href="../interfaces/_typings_bluebird_bluebird_d_.promise.cancellationerror.html" class="tsd-kind-icon">Cancellation<wbr>Error</a>
 							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-is-external">
+								<a href="../interfaces/_typings_bluebird_bluebird_d_.promise.concurrencyoption.html" class="tsd-kind-icon">Concurrency<wbr>Option</a>
+							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
 								<a href="../interfaces/_typings_bluebird_bluebird_d_.promise.inspection.html" class="tsd-kind-icon">Inspection</a>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-is-external">
 								<a href="../interfaces/_typings_bluebird_bluebird_d_.promise.operationalerror.html" class="tsd-kind-icon">Operational<wbr>Error</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-is-external">
+								<a href="../interfaces/_typings_bluebird_bluebird_d_.promise.promisifyalloptions.html" class="tsd-kind-icon">Promisify<wbr>All<wbr>Options</a>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-is-external">
 								<a href="../interfaces/_typings_bluebird_bluebird_d_.promise.rangeerror.html" class="tsd-kind-icon">Range<wbr>Error</a>
@@ -6839,6 +6982,9 @@ promise.then(function(obj){
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
 								<a href="../interfaces/_typings_bluebird_bluebird_d_.promise.resolver.html" class="tsd-kind-icon">Resolver</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-is-external">
+								<a href="../interfaces/_typings_bluebird_bluebird_d_.promise.spreadoption.html" class="tsd-kind-icon">Spread<wbr>Option</a>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
 								<a href="../interfaces/_typings_bluebird_bluebird_d_.promise.thenable.html" class="tsd-kind-icon">Thenable</a>
@@ -7022,6 +7168,9 @@ promise.then(function(obj){
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static tsd-is-external">
 								<a href="_typings_bluebird_bluebird_d_.promise.html#filter-1" class="tsd-kind-icon">filter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="_typings_bluebird_bluebird_d_.promise.html#fromnode" class="tsd-kind-icon">from<wbr>Node</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
 								<a href="_typings_bluebird_bluebird_d_.promise.html#is" class="tsd-kind-icon">is</a>
