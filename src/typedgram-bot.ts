@@ -68,6 +68,27 @@ export type fileType = string | Stream
 export class TelegramTypedBot extends TelegramBot {
 
     /**
+     * Telegram Bot unique ID.
+     *
+     * @type {number}
+     */
+    public id: number
+
+    /**
+     * Telegram Bot unique username.
+     *
+     * @type {string}
+     */
+    public username: string
+
+    /**
+     * Telegram Bot name.
+     *
+     * @type {string}
+     */
+    public name: string
+
+    /**
      * Collection containing every registered command with the respective action.
      */
     public commands: { [command: string]: Action } = {}
@@ -123,6 +144,9 @@ export class TelegramTypedBot extends TelegramBot {
         this.setWebHook(server.domain + ':443/bot' + token)
 
         this.getMe().then(me => {
+            this.id = me.id
+            this.username = me.username
+            this.name = me.first_name
             if (this.initializationAction) this.initializationAction(me)
         })
 
@@ -208,8 +232,11 @@ export class TelegramTypedBot extends TelegramBot {
     }
 
     protected receivedNonResponseMessage(event: string, msg: Message) {
-        const action = this.events[event] || this.receivedText
-        action(msg)
+        if (this.events[event]) {
+            this.events[event](msg)
+        } else {
+            this.receivedText(msg)
+        }
     }
 
     protected receivedText(msg: Message) {
@@ -224,8 +251,11 @@ export class TelegramTypedBot extends TelegramBot {
     }
 
     protected receivedCommand(command: string, msg: Message) {
-        const action = this.commands[command] || this.missingAction;
-        action(msg)
+        if (this.commands[command]) {
+            this.commands[command](msg)
+        } else {
+            this.missingAction(msg)
+        }
     }
 
     protected receivedPlainText(text: string, msg: Message) {
@@ -259,9 +289,8 @@ export class TelegramTypedBot extends TelegramBot {
      * @return {Promise<Message>}         Send operation promise returned by that command. Rejected if the command was not registerd.
      */
     public execCommand(command: string, msg: Message): Promise<Message> {
-        const action = this.commands[command]
-        if (action) {
-            return action(msg)
+        if (this.commands[command]) {
+            return this.commands[command](msg)
         } else {
             return Promise.reject(`Action for command '${command}' not found`)
         }
@@ -293,9 +322,8 @@ export class TelegramTypedBot extends TelegramBot {
      * @return {Promise<Message>}       Send operation promise returned by that event. Rejected if the event was not registerd.
      */
     public execEvent(event: string, msg: Message): Promise<Message> {
-        const action = this.events[event]
-        if (action) {
-            return action(msg)
+        if (this.events[event]) {
+            return this.events[event](msg)
         } else {
             return Promise.reject(`Action for event '${event}' not found`)
         }

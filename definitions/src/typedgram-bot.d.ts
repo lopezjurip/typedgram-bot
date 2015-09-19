@@ -64,6 +64,24 @@ declare module 'typedgram-bot' {
         */
     export class TelegramTypedBot extends TelegramBot {
             /**
+                * Telegram Bot unique ID.
+                *
+                * @type {number}
+                */
+            id: number;
+            /**
+                * Telegram Bot unique username.
+                *
+                * @type {string}
+                */
+            username: string;
+            /**
+                * Telegram Bot name.
+                *
+                * @type {string}
+                */
+            name: string;
+            /**
                 * Collection containing every registered command with the respective action.
                 */
             commands: {
