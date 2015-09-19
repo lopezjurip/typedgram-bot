@@ -8,6 +8,9 @@ lib/test
 lib/example
 lib/index.js
 
+# Docs, should be in gh-pages branch
+docs
+
 # Logs
 logs
 *.log
