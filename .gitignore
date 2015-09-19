@@ -2,7 +2,11 @@
 
 # Tests should be transpiled locally
 definitions/test
+definitions/example
+definitions/index.d.ts
 lib/test
+lib/example
+lib/index.js
 
 # Logs
 logs
