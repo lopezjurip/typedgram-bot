@@ -365,6 +365,13 @@ interface Message {
     video?: Video
 
     /**
+     * Message is a voice message, information about the file
+     *
+     * @type Voice
+     */
+    voice?: Voice
+
+    /**
      * Caption for the photo or video
      *
      * @type string
@@ -747,6 +754,20 @@ declare module 'node-telegram-bot-api' {
          * @return {Promise<Message>}          Send operation promise
          */
         public sendVideo(chatId: idType, path: fileType, options?: ISendVideoOptions): Promise<Message>
+        /**
+         * Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message.
+         * For this to work, your audio must be in an .ogg file encoded with OPUS (other formats may be sent as [[Audio]] or [[Document]]).
+         * On success, the sent [[Message]] is returned.
+         * Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.
+         *
+         * See: https://core.telegram.org/bots/api#sendvoice
+         *
+         * @param  {idType}            chatId  Unique identifier for the message recipient — [[User]] or [[GroupChat]] id
+         * @param  {fileType}          voice   A file path or a Stream. Can also be a file_id previously
+         * @param  {ISendVoiceOptions} options Additional Telegram query options
+         * @return {Promise<Message>}          Send operation promise
+         */
+        public sendVoice(chatId: idType, voice: fileType, options?: ISendVoiceOptions): Promise<Message>
 
         /**
          * Use this method to send point on the map. On success, the sent [[Message]] is returned.
