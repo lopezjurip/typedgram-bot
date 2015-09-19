@@ -28,6 +28,7 @@ export const TelegramEvent = {
     photo: 'photo',
     audio: 'audio',
     video: 'video',
+    voice: 'voice',
     document: 'document',
     contact: 'contact',
     location: 'location',
@@ -131,6 +132,7 @@ export class TelegramTypedBot extends TelegramBot {
         super.on(TelegramEvent.photo, msg => this.receivedMessage(TelegramEvent.photo, msg))
         super.on(TelegramEvent.sticker, msg => this.receivedMessage(TelegramEvent.sticker, msg))
         super.on(TelegramEvent.video, msg => this.receivedMessage(TelegramEvent.video, msg))
+        super.on(TelegramEvent.voice, msg => this.receivedMessage(TelegramEvent.voice, msg))
         super.on(TelegramEvent.contact, msg => this.receivedMessage(TelegramEvent.contact, msg))
         super.on(TelegramEvent.location, msg => this.receivedMessage(TelegramEvent.location, msg))
         super.on(TelegramEvent.group_chat_created, msg => this.receivedMessage(TelegramEvent.group_chat_created, msg))

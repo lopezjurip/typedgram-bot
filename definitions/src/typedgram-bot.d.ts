@@ -29,6 +29,7 @@ declare module 'typedgram-bot' {
             photo: string;
             audio: string;
             video: string;
+            voice: string;
             document: string;
             contact: string;
             location: string;
