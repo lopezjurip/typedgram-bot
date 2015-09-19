@@ -16,7 +16,9 @@
         "prepublish": "gulp build",
         "build": "gulp build",
         "pretest": "gulp build",
-        "test": "mocha"
+        "test": "mocha lib/test",
+        "ts-example": "gulp build && node lib/example/typescript.js",
+        "js-example": "gulp build && node example/javascript.js"
     },
     "typescript": {
         "definitions": [

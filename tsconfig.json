@@ -10,7 +10,6 @@
         "preserveConstEnums": true,
         "sourceMap": false,
         "declaration": true,
-        "rootDir": "./src",
         "outDir": "./lib"
     },
     "filesGlob": [
@@ -18,8 +17,10 @@
         "typings/**/*.ts",
         "src/**/*.ts",
         "test/**/*.ts",
-        "!./node_modules/**/*",
-        "!./example/typescript.ts"
+        "example/typescript.ts",
+        "index.ts",
+        "!./index.ts",
+        "!./node_modules/**/*"
     ],
     "files": [
         "definitions/src/node-telegram-bot-api.d.ts",
@@ -29,7 +30,9 @@
         "typings/node/node.d.ts",
         "typings/tsd.d.ts",
         "src/typedgram-bot.ts",
-        "test/import.ts"
+        "test/import.ts",
+        "example/typescript.ts",
+        "index.ts"
     ],
     "formatCodeOptions": {
         "indentSize": 4,

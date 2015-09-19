@@ -1,6 +1,8 @@
-/// <reference path="../definitions/scr/typedgram-bot.d.ts"/>
+/// <reference path="../definitions/src/node-telegram-bot-api.d.ts"/>
+/// <reference path="../definitions/src/typedgram-bot.d.ts"/>
 
-import {TelegramTypedBot as Bot, IServerOptions, TelegramEvent} from 'typedgram-bot'
+// import {TelegramTypedBot as Bot, IServerOptions, TelegramEvent} from 'typedgram-bot'
+import {TelegramTypedBot as Bot, IServerOptions, TelegramEvent} from '../index'
 
 const PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT      // do not choose 443
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN                       // from @botfather
@@ -34,8 +36,12 @@ bot.onInitialization(me => {
     `)
 })
 
+bot.onCommand('/me', msg => {
+    return bot.sendMessage(msg.chat.id, JSON.stringify(msg.from, null, 2))
+})
+
 bot.onCommand('/help', msg => {
-    return bot.sendMessage(msg.chat.id, 'Call the action /echo to perform an echo')
+    return bot.sendMessage(msg.chat.id, 'Call the action /echo to perform an echo or /apps to see an advanced use.')
 })
 
 bot.onCommand('/echo', msg => {
@@ -82,5 +88,8 @@ bot.onCommand(['/apps', '/applications'], msg => {
                 return bot.sendMessage(response.chat.id, 'None selected', keyboard)
             }
         }
+    })
+    .catch(err => {
+        return bot.sendMessage(msg.chat.id, 'Timeout!', {reply_markup: {hide_keyboard: true}})
     })
 })

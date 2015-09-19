@@ -1,4 +1,5 @@
-var telegram = require('typedgram-bot');
+// var telegram = require('typedgram-bot');
+var telegram = require('../index');
 
 var PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT;      // do not choose 443
 var TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;                       // from @botfather
@@ -18,8 +19,12 @@ bot.onInitialization(function(me) {
   console.log('Server info:', server);
 });
 
+bot.onCommand('/me', function(msg) {
+  return bot.sendMessage(msg.chat.id, JSON.stringify(msg.from, null, 2));
+});
+
 bot.onCommand('/help', function(msg) {
-  return bot.sendMessage(msg.chat.id, 'Call the action /echo to perform an echo');
+  return bot.sendMessage(msg.chat.id, 'Call the action /echo to perform an echo or /apps to see an advanced use.');
 });
 
 bot.onCommand('/echo', function(msg) {
@@ -33,7 +38,7 @@ bot.onCommand('/echo', function(msg) {
   });
 });
 
-bot.setEvent(telegram.TelegramEvent.photo, function(bot, msg) {
+bot.onEvent(telegram.TelegramEvent.photo, function(bot, msg) {
   bot.sendMessage(msg.chat.id, 'Nice pic!');
 });
 
@@ -72,5 +77,8 @@ bot.onCommand(['/apps', '/applications'], function(msg) {
         return bot.sendMessage(response.chat.id, 'None selected', keyboard);
       }
     }
+  })
+  .catch(err => {
+    return bot.sendMessage(msg.chat.id, 'Timeout!', {reply_markup: {hide_keyboard: true}})
   });
 });
