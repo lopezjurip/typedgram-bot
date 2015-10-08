@@ -6,16 +6,16 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "node/node.d.ts": {
-      "commit": "6f6e5c7dd9effe21fee14eb65fe340ecbbc8580a"
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     },
     "bluebird/bluebird.d.ts": {
-      "commit": "6f6e5c7dd9effe21fee14eb65fe340ecbbc8580a"
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     },
     "chai/chai.d.ts": {
-      "commit": "6f6e5c7dd9effe21fee14eb65fe340ecbbc8580a"
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     },
     "mocha/mocha.d.ts": {
-      "commit": "6f6e5c7dd9effe21fee14eb65fe340ecbbc8580a"
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     }
   }
 }
