@@ -101,6 +101,13 @@ interface IFile {
      * @type number
      */
     file_size?: number
+
+    /**
+     * Use https://api.telegram.org/file/bot<token>/<file_path> to get the file.
+     *
+     * @type string
+     */
+    file_path?: string
 }
 
 interface IMimeType extends IFile {
@@ -816,9 +823,40 @@ declare module 'node-telegram-bot-api' {
          *                                                 By default, all photos are returned.
          * @param  {number}                     limit      Limits the number of photos to be retrieved.
          *                                                 Values between 1—100 are accepted. Defaults to 100.
-         * @return {Promise<UserProfilePhotos>}            Send operation promise
+         * @return {Promise<UserProfilePhotos>}            [[UserProfilePhotos]] object
          */
         public getUserProfilePhotos(userId: idType, offset?: number, limit?: number): Promise<UserProfilePhotos>
+
+        /**
+         * Use this method to get basic info about a file and prepare it for downloading.
+         * Attention: link will be valid for 1 hour.
+         *
+         * @param  {string}         fileId File identifier to get info about
+         * @return {Promise<IFile>}        [[IFile]] object with [[file_path]]
+         */
+        public getFile(fileId: string): Promise<IFile>;
+
+        /**
+         * Use this method to get link for file for subsequent use.
+         * Attention: link will be valid for 1 hour.
+         *
+         * This method is a sugar extension of the [[getFile]] method.
+         * Which returns just path to file on remote server (you will have to manually build full uri after that).
+         *
+         * @param  {string}          fileId File identifier to get info about
+         * @return {Promise<string>}        Promise which will have *fileURI* in resolve callback
+         */
+        public getFileLink(fileId: string): Promise<string>;
+
+        /**
+         * Downloads file in the specified folder.
+         * This is just a sugar for [[getFile]] method.
+         *
+         * @param  {string}          fileId      File identifier to get info about
+         * @param  {string}          downloadDir Absolute path to the folder in which file will be saved
+         * @return {Promise<string>}             Will have filePath of downloaded file in resolve callback
+         */
+        public downloadFile(fileId: string, downloadDir: string): Promise<string>
     }
 
     export = TelegramBot;
